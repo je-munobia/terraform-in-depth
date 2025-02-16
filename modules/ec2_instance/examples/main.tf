@@ -12,6 +12,8 @@ data "aws_subnets" "default" {
 module "test_instance" {
   source    = "github.com/je-munobia/terraform-in-depth//modules/ec2_instance"
   subnet_id = data.aws_subnets.default.ids[0]
+  name_prefix = test_instance
+  tags = {env = "dev"}
 }
 
 output "aws_instance_arn" {
