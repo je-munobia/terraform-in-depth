@@ -10,7 +10,7 @@ data "aws_subnets" "default" {
 }
 
 module "test_instance" {
-  source    = "github.com/je-munobia/terraform-in-depth//ec2_instance"
+  source    = "github.com/je-munobia/terraform-in-depth//modules/ec2_instance"
   subnet_id = data.aws_subnets.default.ids[0]
 }
 
