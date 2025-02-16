@@ -34,7 +34,7 @@ variable "instance_count" {
     error_message = "must not be negative"
   }
   validation {
-    condition     = can(parseint(var.instance_count, 10))
+    condition     = can(parseint(tostring(var.instance_count), 10))
     error_message = "must not have a fractional part"
   }
 }
